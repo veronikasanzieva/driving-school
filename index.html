@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автошкола "Драйв" | Обучение вождению</title>
+    
+    <!-- Подключаем современный шрифт Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Путь к стилям (файл лежит в папке css) -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Панель доступности -->
+    <div class="accessibility-panel" role="region" aria-label="Панель доступности">
+        <button id="lang-toggle" aria-label="Switch language">EN / RU</button>
+        <button id="theme-toggle" aria-label="Переключить тему">🌓 Тема</button>
+        <button id="contrast-toggle" aria-label="Включить контрастный режим">🔲 Контраст</button>
+        <button id="font-increase" aria-label="Увеличить шрифт">A+</button>
+        <button id="font-decrease" aria-label="Уменьшить шрифт">A-</button>
+        <button id="speak-btn" aria-label="Озвучить текст страницы">🔊 Озвучить</button>
+    </div>
+
+    <header class="header">
+        <div class="logo" aria-label="Логотип Автошколы Драйв">
+            <span aria-hidden="true">🚗</span> Автошкола "Драйв"
+        </div>
+        <nav aria-label="Основная навигация">
+            <ul class="nav-links">
+                <li><a href="#hero" data-ru="Главная" data-en="Home">Главная</a></li>
+                <li><a href="#services" data-ru="Услуги" data-en="Services">Услуги</a></li>
+                <li><a href="#slider-section" data-ru="Галерея" data-en="Gallery">Галерея</a></li>
+                <li><a href="#quiz" data-ru="Тест ПДД" data-en="Quiz">Тест ПДД</a></li>
+                <li><a href="#contacts" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Главный экран -->
+        <section id="hero" class="hero">
+            <h1 data-ru="Станьте уверенным водителем" data-en="Become a confident driver">Станьте уверенным водителем</h1>
+            <p data-ru="Обучение категориям A, B, C. Современный автопарк, опытные инструкторы." data-en="Training categories A, B, C. Modern fleet, experienced instructors.">Обучение категориям A, B, C. Современный автопарк, опытные инструкторы.</p>
+            <a href="#contacts" class="btn" data-ru="Записаться на обучение" data-en="Sign up for training">Записаться на обучение</a>
+        </section>
+
+        <!-- Услуги с поиском -->
+        <section id="services" class="services">
+            <h2 data-ru="Наши направления" data-en="Our directions">Наши направления</h2>
+            <input type="text" id="search-input" placeholder="Поиск услуг..." class="search-bar">
+            <div class="cards-grid" id="services-grid">
+                <article class="card animate-on-scroll">
+                    <h3 data-ru="Категория B" data-en="Category B">Категория B</h3>
+                    <p data-ru="Легковые автомобили. 56 часов теории и 56 часов практики." data-en="Passenger cars. 56 hours of theory and 56 hours of practice.">Легковые автомобили. 56 часов теории и 56 часов практики.</p>
+                    <button class="btn details-btn">Подробнее</button>
+                </article>
+                <article class="card animate-on-scroll">
+                    <h3 data-ru="Категория A" data-en="Category A">Категория A</h3>
+                    <p data-ru="Мотоциклы. Для тех, кто любит скорость и свободу." data-en="Motorcycles. For those who love speed and freedom.">Мотоциклы. Для тех, кто любит скорость и свободу.</p>
+                    <button class="btn details-btn">Подробнее</button>
+                </article>
+                <article class="card animate-on-scroll">
+                    <h3 data-ru="Экстремальное вождение" data-en="Extreme driving">Экстремальное вождение</h3>
+                    <p data-ru="Курс для повышения мастерства на скользкой дороге." data-en="A course to improve skills on slippery roads.">Курс для повышения мастерства на скользкой дороге.</p>
+                    <button class="btn details-btn">Подробнее</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Слайдер без библиотек (ВАШИ ФОТОГРАФИИ) -->
+        <section id="slider-section" class="slider-section">
+            <h2 data-ru="Наш автопарк" data-en="Our fleet">Наш автопарк</h2>
+            <div class="slider-container">
+                <div class="slider-track" id="slider-track">
+                    <!-- Пути к вашим локальным картинкам (лежат в корне проекта) -->
+                    <div class="slide"><img src="car1.jpg" alt="Автомобиль 1"></div>
+                    <div class="slide"><img src="car2.jpg" alt="Автомобиль 2"></div>
+                    <div class="slide"><img src="car3.jpg" alt="Автомобиль 3"></div>
+                </div>
+                <button class="slider-btn prev" id="prev-btn">&#10094;</button>
+                <button class="slider-btn next" id="next-btn">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- Мини-тест по ПДД -->
+        <section id="quiz" class="quiz-section">
+            <h2 data-ru="Проверьте свои знания ПДД" data-en="Test your traffic rules knowledge">Проверьте свои знания ПДД</h2>
+            <div class="quiz-container" id="quiz-container"></div>
+            <button id="check-quiz-btn" class="btn" data-ru="Проверить результат" data-en="Check result">Проверить результат</button>
+            <p id="quiz-result" aria-live="polite"></p>
+        </section>
+
+        <!-- Форма Netlify -->
+        <section id="contacts" class="contacts">
+            <h2 data-ru="Записаться на обучение" data-en="Sign up for training">Записаться на обучение</h2>
+            <form name="contact" method="POST" data-netlify="true" class="netlify-form">
+                <input type="hidden" name="form-name" value="contact" />
+                <p>
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" name="name" required>
+                </p>
+                <p>
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </p>
+                <button type="submit" class="btn">Отправить заявку</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Автошкола "Драйв". Все права защищены.</p>
+    </footer>
+
+    <!-- Кнопка наверх -->
+    <button id="scroll-to-top" class="scroll-top" title="Наверх">&#8679;</button>
+
+    <!-- Модальное окно -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2 id="modal-title">Заголовок</h2>
+            <p id="modal-text">Текст описания.</p>
+        </div>
+    </div>
+
+    <!-- Путь к скриптам (файл лежит в папке js) -->
+    <script src="js/script.js"></script>
+</body>
+</html>
